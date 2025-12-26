@@ -420,7 +420,7 @@ export default function TalentDetail() {
           <div className="space-y-6">
             {/* Skills */}
             {talent.skills.length > 0 && (
-              <section className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100/50 sticky top-24">
+              <section className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100/50 lg:sticky lg:top-24">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 bg-amber-50 rounded-lg">
                     <Award className="w-5 h-5 text-amber-600" />
