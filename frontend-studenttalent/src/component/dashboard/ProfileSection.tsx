@@ -70,11 +70,11 @@ export default function ProfileSection() {
   if (!editing) {
     return (
       <div>
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
           <h3 className="text-2xl text-gray-900 dark:text-slate-100">Profile Information</h3>
           <button
             onClick={() => setEditing(true)}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="w-full sm:w-auto px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Edit Profile
           </button>
@@ -110,11 +110,11 @@ export default function ProfileSection() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
         <h3 className="text-2xl text-gray-900 dark:text-slate-100">Edit Profile</h3>
         <button
           onClick={() => setEditing(false)}
-          className="px-6 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors dark:text-slate-300 dark:hover:bg-slate-800"
+          className="w-full sm:w-auto px-6 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors dark:text-slate-300 dark:hover:bg-slate-800"
         >
           Cancel
         </button>
@@ -257,7 +257,7 @@ export default function ProfileSection() {
 
           <div>
             <label className="block text-sm text-gray-700 dark:text-slate-200 mb-2">Photo</label>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border border-gray-200 bg-gray-50 dark:border-slate-700 dark:bg-slate-900">
                 {avatarPreview ? (
                   <img 
@@ -273,7 +273,7 @@ export default function ProfileSection() {
                   <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-slate-500 text-sm">No photo</div>
                 )}
               </div>
-              <label className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg cursor-pointer hover:bg-gray-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
+              <label className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2 bg-gray-100 text-gray-700 rounded-lg cursor-pointer hover:bg-gray-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
                 <Upload className="w-4 h-4" />
                 <span>Upload</span>
                 <input
@@ -299,7 +299,7 @@ export default function ProfileSection() {
         <button
           type="submit"
           disabled={loading}
-          className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? (
             <>

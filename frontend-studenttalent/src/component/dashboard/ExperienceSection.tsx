@@ -88,11 +88,11 @@ export default function ExperienceSection() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
         <h3 className="text-2xl text-gray-900">Experience</h3>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
         >
           <Plus className="w-5 h-5" />
           Add Experience
@@ -176,18 +176,18 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <button
               type="submit"
               disabled={loading}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
+              className="w-full sm:w-auto px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
             >
               {loading ? 'Adding...' : 'Add Experience'}
             </button>
             <button
               type="button"
               onClick={() => setShowForm(false)}
-              className="px-6 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+              className="w-full sm:w-auto px-6 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
             >
               Cancel
             </button>
@@ -215,11 +215,11 @@ export default function ExperienceSection() {
               key={exp.id}
               className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
             >
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                 <div className="flex-1">
                   <h4 className="text-xl text-gray-900 mb-1">{exp.title}</h4>
                   <p className="text-gray-600 mb-2">{exp.company}</p>
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
                     <Calendar className="w-4 h-4" />
                     <span>
                       {exp.startDate} - {exp.current ? 'Present' : exp.endDate}

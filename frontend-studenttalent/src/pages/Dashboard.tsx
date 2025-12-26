@@ -25,8 +25,8 @@ export default function Dashboard() {
         </div>
 
         {/* User Info Card */}
-        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-700 rounded-2xl shadow-lg p-8 mb-8 text-white">
-          <div className="flex items-center gap-6">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-700 rounded-2xl shadow-lg p-6 sm:p-8 mb-8 text-white">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 text-center sm:text-left">
             <img
               src={user?.avatar}
               alt={user?.name}
@@ -47,14 +47,14 @@ export default function Dashboard() {
         {/* Tabs */}
         <div className="bg-white rounded-2xl shadow-md mb-8 dark:bg-slate-900">
           <div className="border-b border-gray-200 dark:border-slate-800">
-            <nav className="flex -mb-px">
+            <nav className="flex gap-2 overflow-x-auto -mb-px px-4 sm:px-0">
               {tabs.map(tab => {
                 const Icon = tab.icon;
                 return (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-2 px-8 py-4 border-b-2 transition-colors ${
+                    className={`flex items-center gap-2 px-4 sm:px-8 py-3 sm:py-4 whitespace-nowrap border-b-2 transition-colors ${
                       activeTab === tab.id
                         ? 'border-emerald-500 text-emerald-500'
                         : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300 dark:text-slate-300 dark:hover:text-slate-100 dark:hover:border-slate-700'
@@ -68,7 +68,7 @@ export default function Dashboard() {
             </nav>
           </div>
 
-          <div className="p-8">
+          <div className="p-6 sm:p-8">
             {activeTab === 'profile' && <ProfileSection />}
             {activeTab === 'skills' && <SkillsSection />}
             {activeTab === 'experience' && <ExperienceSection />}
